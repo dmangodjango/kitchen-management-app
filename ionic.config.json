@@ -1,0 +1,7 @@
+{
+  "name": "kitchentory-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
