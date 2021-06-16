@@ -1,0 +1,37 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header-btn">
+    <ion-button slot="end" fill="clear">
+      <ion-icon slot="icon-only" name="settings-outline" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar>
+    <label class="header-title">What's In The Kitchen?</label>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-slides [options]="slideOptions">
+      <ion-slide *ngFor="let item of itemCategory" tappable>
+        <div>
+          <label slot="start">{{item.category}}</label>
+          <ion-badge slot="end">{{item.count}}</ion-badge>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-list>
+    <ion-item lines="none" href="#" *ngFor="let item of itemList">
+      <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+      <ion-label>
+        <span class="item-header">{{item.name}}</span>
+        <p class="item-status">Expiring in {{item.lifespan}} days</p>
+      </ion-label>
+      <ion-label class="fixed-width" slot="end">
+        <h3 slot="end">{{item.amount}} pcs</h3>
+        <p class="item-location" slot="end">{{item.location}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
