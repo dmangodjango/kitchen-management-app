@@ -83,7 +83,7 @@ export class ItemsListPage implements OnInit {
       amount: "4"
     },
     {
-      name: "Samyang Carbonara",
+      name: "Su Tah Ramen",
       lifespan: "427",
       location: "Dry",
       amount: "4"
