@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back" color="medium"></ion-back-button>
+    </ion-buttons>
+    <ion-button slot="end" fill="clear">
+      <ion-icon slot="icon-only" name="trash-outline" color="medium"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar class="toolbar-left-padding">
+    <label class="header-title">{{itemInfo.name}}</label>
+    <div class="item-type-location">
+      <ion-icon src="./assets/icon/food-category/{{itemInfo.type}}.svg"></ion-icon>
+      <label>{{itemInfo.type}}<span class="no-class"> in </span>{{itemInfo.location}}</label>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+</ion-content>

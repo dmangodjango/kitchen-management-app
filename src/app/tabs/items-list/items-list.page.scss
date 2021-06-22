@@ -1,21 +1,19 @@
 ion-header { box-shadow: 0px 3px 30px var(--ion-color-light-shade) !important; }
 
-.header-title {
-    font-size: 20pt;
-    font-weight: bold;
-    padding-left: 10px;
-}
-
-
 .header-btn {
-      ion-icon {
-        color: var( --ion-color-primary-contrast);
+    ion-button {
+        --padding-start: 5px !important;
+        ion-icon {
+            font-size: 25pt;
+            color: var( --ion-color-medium-shade);
+        }
     }
 }
 
 ion-slide {
     div {
         display: inherit;
+        padding: 10px;
         label {    
             font-weight: bold;
             font-size: 11pt;
@@ -62,6 +60,20 @@ ion-list {
             }
         }
 
+    }
+}
+
+
+.category-selected {
+    border-bottom: var(--ion-color-primary) solid;
+
+    label {
+        color: var(--ion-color-primary) !important;
+    }
+
+    ion-badge {
+        --background: var(--ion-color-primary-tint) !important;
+        color: var(--ion-color-primary) !important;
     }
 }
 

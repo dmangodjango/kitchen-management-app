@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonNav, NavController } from '@ionic/angular';
+import { ItemDetailsPage } from './item-details/item-details.page';
 @Component({
   selector: 'app-items-list',
   templateUrl: './items-list.page.html',
   styleUrls: ['./items-list.page.scss'],
 })
 export class ItemsListPage implements OnInit {
+
+  @ViewChild("ionNav", {static: false}) ionNav: IonNav;
+  rootPage = ItemsListPage;
 
   slideOptions = {
     slidesPerView: 3.2,
@@ -15,15 +19,19 @@ export class ItemsListPage implements OnInit {
   itemCategory = [
     {
       category: "Chiller",
-      count: 23
+      count: 23,
+      selected: false
     },
     {
       category: "Freezer",
-      count: 22
+      count: 22,
+      selected: false
+
     },    
     {
       category: "Dry",
-      count: 40
+      count: 40,
+      selected: false
     },
   ];
 
@@ -32,65 +40,71 @@ export class ItemsListPage implements OnInit {
       name: "Brown Button Mushroom",
       lifespan: "14",
       location: "Fridge",
-      amount: "9"
+      amount: "9",
+      type: "vege"
     },
     {
       name: "Ketam Bunga",
       lifespan: "30",
       location: "Freezer",
-      amount: "10"
+      amount: "10",
+      type: "seafood"
+
     },    
     {
       name: "Udang Harimau",
       lifespan: "20",
       location: "Freezer",
-      amount: "15"
+      amount: "15",
+      type: "shrimp"
     },    
     {
       name: "Maggie Ayam",
       lifespan: "4",
       location: "Dry",
-      amount: "4"
+      amount: "4",
+      type: "noodle"
     },
     {
       name: "Samyang Carbonara",
       lifespan: "427",
       location: "Dry",
-      amount: "4"
+      amount: "4",
+      type: "noodle"
     },
     {
-      name: "Brown Button Mushroom",
+      name: "1/4 Chicken",
+      lifespan: "14",
+      location: "Freezer",
+      amount: "3",
+      type: "chicken"
+    },
+    {
+      name: "Farm Fresh Milk",
       lifespan: "14",
       location: "Fridge",
-      amount: "9"
-    },
-    {
-      name: "Ketam Bunga",
-      lifespan: "30",
-      location: "Freezer",
-      amount: "10"
+      amount: "10",
+      type: "dairy"
     },    
     {
-      name: "Udang Harimau",
-      lifespan: "20",
+      name: "Belgian Choc Cake",
+      lifespan: "7",
       location: "Freezer",
-      amount: "15"
+      amount: "15",
+      type: "cake"
     },    
     {
-      name: "Maggie Ayam",
-      lifespan: "4",
-      location: "Dry",
-      amount: "4"
-    },
-    {
-      name: "Su Tah Ramen",
-      lifespan: "427",
-      location: "Dry",
-      amount: "4"
+      name: "Pepperoni Pizza",
+      lifespan: "2",
+      location: "Fridge",
+      amount: "4",
+      type: "leftover"
     }
   ];
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) {}
 
   ngOnInit() {
     this.setUpCategory();
@@ -105,11 +119,23 @@ export class ItemsListPage implements OnInit {
 
     const allCategories = {
       category: "All",
-      count: totalCategoriesCount
+      count: totalCategoriesCount,
+      selected: true
     }
 
     this.itemCategory = [ allCategories, ...this.itemCategory];
 
+  }
+
+  changeOnSelectedCategory(index) {
+    const previousSelected = this.itemCategory.findIndex(item => item.selected);
+    this.itemCategory[previousSelected].selected = false;
+    this.itemCategory[index].selected = true;
+  }
+
+  goToItemDetails() {
+    console.log("nav clicked")
+    this.ionNav.push(ItemDetailsPage);
   }
 
 }

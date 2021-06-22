@@ -1,17 +1,19 @@
-
 <ion-header class="ion-no-border">
   <ion-toolbar class="header-btn">
+    <ion-button fill="clear">
+      <ion-icon slot="icon-only" name="search-sharp"></ion-icon>
+    </ion-button>
     <ion-button slot="end" fill="clear">
-      <ion-icon slot="icon-only" name="settings-outline" ></ion-icon>
+      <ion-icon slot="icon-only" name="cog-sharp" ></ion-icon>
     </ion-button>
   </ion-toolbar>
-  <ion-toolbar>
-    <label class="header-title">What's In The Kitchen?</label>
+  <ion-toolbar class="toolbar-left-padding">
+    <label class="header-title" slot="start">Pantry</label>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-slides [options]="slideOptions">
-      <ion-slide *ngFor="let item of itemCategory" tappable>
-        <div>
+    <ion-slides [options]="slideOptions" >
+      <ion-slide *ngFor="let item of itemCategory; let index = index" (click)="changeOnSelectedCategory(index)">
+        <div [ngClass]="{'category-selected': item.selected}">
           <label slot="start">{{item.category}}</label>
           <ion-badge slot="end">{{item.count}}</ion-badge>
         </div>
@@ -20,10 +22,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true">
+<ion-content fullscreen="true" >
   <ion-list>
-    <ion-item lines="none" href="#" *ngFor="let item of itemList">
-      <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+    <ion-item lines="none" button *ngFor="let item of itemList" routerLink="item-details">
+      <ion-icon src="./assets/icon/food-category/{{item.type}}.svg" slot="start"></ion-icon>
       <ion-label>
         <span class="item-header">{{item.name}}</span>
         <p class="item-status">Expiring in {{item.lifespan}} days</p>

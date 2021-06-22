@@ -1,0 +1,29 @@
+ion-header { box-shadow: 0px 3px 30px var(--ion-color-light-shade) !important; }
+
+ion-back-button {
+    margin-left: 15px;
+}
+
+.item-type-location {
+    margin-top: 14px;
+    ion-icon {
+        margin-right: 10px;
+        font-size: 20pt;
+    }
+
+    label{
+        font-size: 11pt;
+        font-weight: bold;
+        color: var(--ion-color-medium-shade);
+        text-transform: capitalize;
+        vertical-align: super;
+
+        span {
+            text-transform: lowercase;
+            color: var(--ion-color-medium-shade);
+            font-size: 11pt;
+            font-weight: normal;
+
+        }
+    }
+}
