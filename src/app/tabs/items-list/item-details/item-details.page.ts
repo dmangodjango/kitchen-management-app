@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ItemDetailsPage implements OnInit {
 
   itemInfo = {
-    name: "Udang Harimau",
-    lifespan: "20",
+    name: "1/4 Chicken",
+    lifespan: "14",
     location: "Freezer",
-    amount: "15",
-    type: "shrimp"
+    amount: "3",
+    type: "chicken"
   };
 
   constructor() { }

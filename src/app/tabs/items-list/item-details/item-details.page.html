@@ -7,17 +7,54 @@
       <ion-icon slot="icon-only" name="trash-outline" color="medium"></ion-icon>
     </ion-button>
   </ion-toolbar>
-  <ion-toolbar class="toolbar-left-padding">
+  <ion-toolbar class="toolbar-left-padding margin-bottom-15">
     <label class="header-title">{{itemInfo.name}}</label>
     <div class="item-type-location">
       <ion-icon src="./assets/icon/food-category/{{itemInfo.type}}.svg"></ion-icon>
       <label>{{itemInfo.type}}<span class="no-class"> in </span>{{itemInfo.location}}</label>
     </div>
   </ion-toolbar>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar-left-padding">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-align-self-start">
+          <div class="border-right-light-grey">
+            <ion-label class="subheader-title-info">In the pantry</ion-label>
+            <ion-label><b>{{itemInfo.lifespan}} Days</b></ion-label>
+          </div>
+        </ion-col>
+        <ion-col class="ion-align-self-start">
+          <div class="border-right-light-grey">
+            <ion-label class="subheader-title-info" color="warning">Expiring</ion-label>
+            <ion-label color="warning"><b>in {{itemInfo.lifespan}} Days</b></ion-label>
+          </div>
+        </ion-col>
+        <ion-col class="ion-align-self-start">
+          <div>
+            <ion-label class="subheader-title-info">Amount</ion-label>
+            <ion-label><b>{{itemInfo.amount}} pcs</b></ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="success" strong="true" expand="block">Use / Cook</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="danger" strong="true" expand="block">Cancel</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
