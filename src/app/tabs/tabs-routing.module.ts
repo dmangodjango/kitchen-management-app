@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
+import { ItemDetailsPage } from '../tabs/items-list/item-details/item-details.page';
 
 const routes: Routes = [
  
@@ -36,6 +37,10 @@ const routes: Routes = [
       }
 
     ]
+  },
+  {
+    path: 'item-details',
+    component: ItemDetailsPage,
   },
   {
     path: '',
