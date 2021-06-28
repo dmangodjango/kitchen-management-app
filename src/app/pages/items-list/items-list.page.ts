@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonNav, NavController } from '@ionic/angular';
-import { ItemDetailsPage } from './item-details/item-details.page';
+import { ItemDetailsPage } from '../item-details/item-details.page';
 @Component({
   selector: 'app-items-list',
   templateUrl: './items-list.page.html',

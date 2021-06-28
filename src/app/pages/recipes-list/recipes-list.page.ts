@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesListPage implements OnInit {
 
-  slideOptions = {
+  slideCategoryOptions = {
     slidesPerView: 3,
     spaceBetween: 5
   };
+
+  slideMenuOptions = {
+    slidesPerView: 1.5,
+    spaceBetween: 10 
+
+  }
 
   itemCategory = [
     {

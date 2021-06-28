@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar></ion-toolbar>
+  <ion-toolbar class="padding-left-15">
+    <ion-label class="header-title" slot="start">Hello, Hafiz</ion-label>
+    <ion-button slot="end" fill="clear">
+      <ion-icon  name="options-outline" slot="icon-only" class="options-icon" color="medium"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+  <ion-toolbar class="padding-top-15 padding-left-15">
+    <ion-item lines="none" class="searchbar">
+      <ion-icon name="search-sharp" color="medium" slot="start"></ion-icon>
+      <ion-label>Search for recipes ...</ion-label>
+    </ion-item>
+    <ion-slides [options]="slideCategoryOptions" class="margin-top-15 category-slides-container">
+      <ion-slide *ngFor="let item of itemCategory; let index = index" (click)="changeOnSelectedCategory(index)">
+        <div class="category-box" [ngClass]="{'category-selected': item.selected}">
+          <label>{{item.category}}</label>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-label class="header-title" >Choose your recipe</ion-label>
+  <ion-slides [options]="slideMenuOptions" class="recipe-slides-container">
+    <ion-slide>
+      <ion-card>
+        <img src="./assets/temp_img/ayam-masak-kicap.JPG"/>
+        <ion-item lines="none" >
+          <ion-label> 
+            <ion-label class="card-title">Ayam Masak Kicap</ion-label>
+            <ion-label class="card-description">40 min</ion-label>
+          </ion-label>
+          <!-- <ion-label class="card-description">40 min</ion-label> -->
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="./assets/temp_img/portugese-grill.jpg"/>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <!-- <ion-list>
+    <ion-card routerLink="/tabs/items-list" [style.--inner-padding-start]="0">
+        <img src="./assets/temp_img/ayam-masak-kicap.JPG"/>
+        <ion-item lines="none">
+          <ion-label>
+            <h1>Ayam Masak Kicap</h1>          
+            <ion-label>Ingredients matched: 5/10</ion-label>
+          </ion-label>
+          <ion-button slot="end" fill="clear">
+            <ion-icon name="heart-sharp" slot="icon-only" color="medium"></ion-icon>
+          </ion-button>
+        </ion-item>
+    </ion-card>
+    <ion-card>
+        <img src="./assets/temp_img/portugese-grill.jpg"/>
+        <h1>Portugese Grill</h1>
+        <ion-label>Ingredients matched: 4/6</ion-label>
+    </ion-card>
+  </ion-list> -->
+</ion-content>

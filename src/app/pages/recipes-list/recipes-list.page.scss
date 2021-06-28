@@ -1,5 +1,14 @@
-ion-slides {
+.category-slides-container {
    height: 60px;
+}
+
+.recipe-slides-container {
+    height: 100%;
+}
+
+.options-icon {
+    // font-size: 23pt;
+    // padding-right: 15PX;
 }
 
 .searchbar {
@@ -34,30 +43,35 @@ ion-slides {
 
 ion-card {
     box-shadow: none;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
+    height: 100%;
 
     img {
         border-radius: 15px;
-        height: 150px;
         width: 100%;
+        height: 80%;
         object-fit: cover;
     }
 
-    h1 {
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: black;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        font-size: 15pt;
-    }
+    ion-item {
+        --padding-start: 0;
+        --padding-end: 0;
+        --inner-padding-end: 0;
+        --inner-padding-top: 0;
 
-    ion-label {
-        font-weight: bold;
-        color: var( --ion-color-medium);
+        .card-title {
+            color: black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 450;
+            margin-bottom: 4px;
+        }
 
+        .card-description {
+            color: var( --ion-color-medium);
+            font-size: 9pt;
+            font-weight: 600;
+        }
     }
 }
