@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "kitchentory-client",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "hafizmustafa.kitchentory",
+  "appName": "kitchentory",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }

@@ -1,9 +1,33 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>recipe-details</ion-title>
+  <ion-toolbar #toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back" color="medium" defaultHref="home/items-list"></ion-back-button>
+    </ion-buttons> -->
+    <ion-button slot="start">
+      <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+    </ion-button>
+    <ion-button slot="end">
+      <ion-icon slot="icon-only" name="create" ></ion-icon>
+    </ion-button>
+    <!-- <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content scrollEvents="true" [appHideHeader]="toolbar" [fullscreen]="true">
+  <img src="./assets/temp_img/ayam-masak-kicap.JPG">
+  <ion-card *ngFor="let i of [2,1,3,4,5,6,7,8,9,10]">
+    <ion-card-header>
+      <ion-card-title>{{i}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 
 </ion-content>

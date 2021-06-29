@@ -14,7 +14,6 @@ export class RecipesListPage implements OnInit {
 
   slideMenuOptions = {
     slidesPerView: 1.5,
-    spaceBetween: 10 
 
   }
 
@@ -35,6 +34,23 @@ export class RecipesListPage implements OnInit {
     {
       category: "Dinner",
       selected: false
+    }
+  ];
+
+  recipeList = [
+    { 
+      name: "Ayam Masak Kicap",
+      cookTime: "30",
+      imgSource: "./assets/temp_img/ayam-masak-kicap.JPG",
+      noOfAvailIngrendients: "4",
+      totalIngredients: "6"
+    },
+    { 
+      name: "Portugese Grill",
+      cookTime: "20",
+      imgSource: "./assets/temp_img/portugese-grill.jpg",
+      noOfAvailIngrendients: "2",
+      totalIngredients: "9"
     }
   ];
 
