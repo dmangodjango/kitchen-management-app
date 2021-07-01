@@ -27,7 +27,7 @@ const routes: Routes = [
       },
       {
         path: "",
-        redirectTo: "recipes-list",
+        redirectTo: "items-list",
         pathMatch: "full"
       }
     ]
