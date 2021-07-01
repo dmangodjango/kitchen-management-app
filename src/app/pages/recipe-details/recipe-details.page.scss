@@ -1,0 +1,147 @@
+
+ion-header {
+    height: 50%;
+}
+.bg-img{
+    --background: url('/assets/temp_img/ayam-masak-kicap.JPG') no-repeat center fixed;
+    height: 85%;
+}
+.food-img {
+    height: 400px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0 0 25px 25px;
+    }
+}
+
+.container {
+    height: 450px;
+    position: relative;
+
+    .food-info-card {
+        text-align: center;
+        padding: 20px;
+    
+        position: absolute;
+        width: 100%;
+        bottom: -3%;
+    
+        ion-grid { 
+            box-shadow: 0px 4px 4px var(--ion-color-light-shade) !important;
+            border-radius: 30px;
+            background-color: white;
+            padding-top: 15px;
+            padding-bottom: 15px;
+    
+            .food-info-title {
+                font-size: 15pt;
+                font-weight: bold;
+                display: block;
+            }
+
+            ion-icon {
+                font-size: 17pt;
+                vertical-align: middle;
+                margin-right: 5px;
+
+                color: var(--ion-color-secondary) !important;
+            }
+        
+            .food-info-desc {
+                font-size: 9pt;
+                font-weight: 500;
+                color: var(--ion-color-medium)
+            }
+         }
+        
+    }
+}
+
+.top-back-btn {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+
+    ion-buttons {
+        padding: 4px;
+
+        ion-back-button {
+            --padding-start: 10px;
+            --padding-end: 15px;
+            --padding-top: 7px;
+            --padding-bottom: 5px;
+    
+            --background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px) !important;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 12pt;
+        }
+    }
+}
+
+.top-edit-btn {
+    position: absolute;
+    top: 5%;
+    left: 84%;
+    width: 100%;
+
+    ion-button {
+        --padding-start: 10px;
+        --padding-end: 10px;
+        --padding-top: 10px;
+        --padding-bottom: 10px;
+
+        --background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px) !important;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.1);
+        font-size: 12pt;
+    }
+}
+
+ion-slide {
+    ion-card {
+        box-shadow: none;
+        width: 100%;
+        text-align: left;
+
+        .ingredient-icon {
+            padding: 10px 0;
+            border-radius: 0 0 8px 8px;
+            background-color: beige;
+            text-align: center;
+
+            ion-icon {
+                font-size: 35pt;
+            }
+        }
+
+        .ingredient-title {
+            font-size: 9pt;
+            font-weight: 500;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: black;
+        }
+
+        .ingredient-sub-title {
+            font-size: 9pt;
+        }
+    }
+}
+
+.see-all-text {
+        margin-right: 7px;
+        float: right;
+        align-self: right;
+        margin-top: 7px;
+        font-size: 10pt;
+        color: gray;
+        font-weight: 500;
+}
+

@@ -1,4 +1,5 @@
-import { Directive, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
+import { newArray } from '@angular/compiler/src/util';
+import { AfterViewInit, Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 import { DomController } from '@ionic/angular';
 
 @Directive({
@@ -6,36 +7,38 @@ import { DomController } from '@ionic/angular';
 })
 export class HideHeaderDirective implements OnInit{
 
-  @Input("appHideHeader") toolbar: any;
-
-  private toolbarHeight = 44;
+  container: any;
+  containerHeight = 400;
 
   constructor(
     private renderer: Renderer2,
-    private domCtrl: DomController
+    private domCtrl: DomController,
+    private el: ElementRef
   ) { }
+
 
   ngOnInit() {
     this.domCtrl.read(() => {
-      this.toolbar = this.toolbar.el;
-      this.toolbarHeight = this.toolbar.clientHeight;
+      this.container = this.el.nativeElement.children[0];
     })
+  
   }
 
   @HostListener("ionScroll", ["$event"]) onContentScroll($event) {
     const scrollTop = $event.detail.scrollTop;
-    console.log(scrollTop, "====> scrollTop")
-    let newPosition = -(scrollTop / 5);
+    this.containerHeight = this.container.clientHeight;
 
-    if(newPosition < -this.toolbarHeight) {
-      newPosition = -this.toolbarHeight
+    let newPosition = -(scrollTop / 1.8);
+
+    if(newPosition < -this.containerHeight) {
+      newPosition = -this.containerHeight
     } 
 
-    let newOpacity = 1 - (newPosition / -this.toolbarHeight);
-    console.log("new position ====> ", newPosition);
+    let newOpacity = 1 - (newPosition / -this.containerHeight);
+
     this.domCtrl.write(() => {
-      this.renderer.setStyle(this.toolbar, "top", `${newPosition}px`);
-      this.renderer.setStyle(this.toolbar, "opacity", newOpacity);
+      this.renderer.setStyle(this.container, "top", `${newPosition}px`);
+      this.renderer.setStyle(this.container, "opacity", newOpacity);
     })
   }
 
